@@ -1,0 +1,15 @@
+services:
+    form.resolved_type_factory:
+        class: Tenolo\FormOrdered\OrderedResolvedFormTypeFactory
+        arguments: ['@tenolo_form_ordered.form_orderer']
+    tenolo_form_ordered.form_orderer:
+        class: Tenolo\FormOrdered\Orderer\FormOrderer
+        public: false
+    tenolo_form_ordered.form_extension:
+        class: Tenolo\FormOrdered\Extension\OrderedFormExtension
+        tags:
+            - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\FormType, extended-type: Symfony\Component\Form\Extension\Core\Type\FormType }
+    tenolo_form_ordered.button_extension:
+        class: Tenolo\FormOrdered\Extension\OrderedButtonExtension
+        tags:
+            - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\ButtonType, extended-type: Symfony\Component\Form\Extension\Core\Type\ButtonType }
