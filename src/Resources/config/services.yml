@@ -7,6 +7,7 @@ services:
     # services
     Tenolo\FormOrdered\OrderedResolvedFormTypeFactory: ~
     Tenolo\FormOrdered\Orderer\FormOrderer: ~
+    Tenolo\FormOrdered\Orderer\FormOrdererInterface: '@Tenolo\FormOrdered\Orderer\FormOrderer'
 
     Tenolo\FormOrdered\Extension\OrderedFormExtension:
         tags:
