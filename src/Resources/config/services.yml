@@ -5,9 +5,6 @@ services:
         public: false
 
     # services
-    form.resolved_type_factory:
-           class: Tenolo\FormOrdered\OrderedResolvedFormTypeFactory
-           
     Tenolo\FormOrdered\Orderer\FormOrderer: ~
     Tenolo\FormOrdered\Orderer\FormOrdererInterface: '@Tenolo\FormOrdered\Orderer\FormOrderer'
 
