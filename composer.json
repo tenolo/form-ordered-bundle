@@ -1,8 +1,11 @@
 {
     "name": "tenolo/form-ordered-bundle",
-    "type": "symfony-bundle",
     "description": "Provides a form ordering support for your Symfony project.",
-    "keywords": [ "form", "order" ],
+    "keywords": [
+        "form",
+        "order"
+    ],
+    "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
         {
@@ -20,8 +23,13 @@
     ],
     "require": {
         "php": "^5.6|^7.0",
-        "symfony/framework-bundle": "^2.8|^3.4|^4.0",
-        "tenolo/form-ordered": "~3.0"
+
+        "symfony/framework-bundle": "^3.4|^4.0",
+        "symfony/config": "^3.4|^4.0",
+        "symfony/dependency-injection": "^3.4|^4.0",
+        "symfony/http-kernel": "^3.4|^4.0",
+
+        "tenolo/form-ordered": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0",
@@ -30,18 +38,17 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://www.setasign.com/downloads/"
-        },
-        {
-            "type": "composer",
             "url": "https://repo.tenolo.com"
-        },
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
         }
     ],
     "autoload": {
-        "psr-4": { "Tenolo\\Bundle\\FormOrderedBundle\\": "src/" }
+        "psr-4": {
+            "Tenolo\\Bundle\\FormOrderedBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
     }
 }
