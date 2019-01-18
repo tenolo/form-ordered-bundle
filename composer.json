@@ -28,6 +28,7 @@
         "symfony/config": "^3.4|^4.0",
         "symfony/dependency-injection": "^3.4|^4.0",
         "symfony/http-kernel": "^3.4|^4.0",
+        "symfony/yaml": "^3.4|^4.0",
 
         "tenolo/form-ordered": "~1.0"
     },
@@ -35,12 +36,6 @@
         "phpunit/phpunit": "^5.0",
         "symfony/phpunit-bridge": "^2.8|^3.4|^4.0"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://repo.tenolo.com"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "Tenolo\\Bundle\\FormOrderedBundle\\": "src/"
