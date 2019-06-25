@@ -8,7 +8,13 @@ $ composer require tenolo/ordered-form-bundle
 
 ## Register the bundle
 
-Then, add the bundle in your `AppKernel`:
+### With Symfony Flex
+
+If you use symfony flex the bundle will be automatically registered.
+
+### Pre Symfony Flex Age
+
+Add the bundle in your `AppKernel`:
 
 ``` php
 // app/AppKernel.php

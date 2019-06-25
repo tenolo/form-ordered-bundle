@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 use Tenolo\FormOrdered\OrderedResolvedFormTypeFactory;
 use Tenolo\FormOrdered\Orderer\FormOrderer;
+use Symfony\Component\Form\ResolvedFormTypeFactoryInterface;
 
 /**
  * Class FormFactoryCompilerPass
@@ -22,12 +23,11 @@ class FormFactoryCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        $container
-            ->findDefinition('form.resolved_type_factory')
-            ->setClass(OrderedResolvedFormTypeFactory::class)
-            ->setArgument(0, new Reference(FormOrderer::class))
-            ->setAutoconfigured(true)
-            ->setAutowired(true);
+        $definition = $container->findDefinition(ResolvedFormTypeFactoryInterface::class);
+        $definition->setClass(OrderedResolvedFormTypeFactory::class);
+        $definition->setArgument(0, new Reference(FormOrderer::class));
+        $definition->setAutoconfigured(true);
+        $definition->setAutowired(true);
     }
 
 }
